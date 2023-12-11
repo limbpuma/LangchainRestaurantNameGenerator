@@ -15,7 +15,7 @@ import os
 
 # Configurar la clave API de OpenAI utilizando st.secrets
 openai_api_key = st.secrets["openai_api_key"]
-openai.api_key = openai_api_key
+#openai.api_key = openai_api_key
 
 
 # Inicializar 'llm'
