@@ -15,7 +15,7 @@ import os
 
 # Configurar la clave API de OpenAI utilizando st.secrets
 st.write("API Key:", st.secrets["my_secrets"]["api_key"])
-st.write("API Key (via entorno):", os.environ["MY_SECRETS_API_KEY"])
+
 #openai.api_key = openai_api_key
 
 
