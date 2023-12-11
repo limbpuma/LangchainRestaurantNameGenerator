@@ -11,11 +11,19 @@ openai_api_key = st.secrets["openai_api_key"]
 openai.api_key = openai_api_key
 
 
+# Inicializar 'llm' fuera de cualquier bloque de funciones para que sea global
 try:
     llm = OpenAI(temperature=0.6)
-    # Resto de tu código...
 except Exception as e:
     st.error(f"Error al inicializar OpenAI: {e}")
+    llm = None  # Define llm como None en caso de error
+
+def generate_restaurant_name_and_items(cuisine):
+    if llm is None:
+        # Manejar el caso donde llm no está definido correctamente
+        st.error("Error: El modelo de lenguaje no ha sido inicializado correctamente.")
+        return
+
 
 
 
