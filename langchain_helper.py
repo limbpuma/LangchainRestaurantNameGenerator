@@ -1,7 +1,7 @@
 """
 git status
 git add .
-git commit -m "changed apikey declarations3"
+git commit -m "changed apikey declarations4"
 git push
 """
 
@@ -14,11 +14,20 @@ import openai
 import os
 
 # Configurar la clave API de OpenAI utilizando st.secrets
-st.write("API Key:", st.secrets["my_secrets"]["api_key"])
+openai_api_key = st.secrets["my_secrets"]["api_key"]
 # Accede a los secretos utilizando la estructura correcta
-llm = OpenAI(temperature=0.6)
 
 
+#openai.api_key = openai_api_key
+
+
+# Inicializar 'llm'
+try:
+    llm = OpenAI(temperature=0.6)
+except Exception as e:
+    # Si hay un error, muestra el mensaje y detiene la ejecución del script
+    st.error(f"Error al inicializar OpenAI: {e}")
+    raise e  # Detiene la ejecución del script
 
 
 def generate_restaurant_name_and_items(cuisine): 
