@@ -1,3 +1,10 @@
+"""
+git status
+git add .
+git commit -m "changed llm to exc"
+git push
+"""
+
 from langchain.llms import OpenAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
@@ -11,7 +18,6 @@ openai_api_key = st.secrets["openai_api_key"]
 openai.api_key = openai_api_key
 
 
-# Inicializar 'llm' fuera de cualquier bloque de funciones para que sea global
 # Inicializar 'llm'
 try:
     llm = OpenAI(temperature=0.6)
@@ -19,9 +25,6 @@ except Exception as e:
     # Si hay un error, muestra el mensaje y detiene la ejecución del script
     st.error(f"Error al inicializar OpenAI: {e}")
     raise e  # Detiene la ejecución del script
-
-
-
 
 
 def generate_restaurant_name_and_items(cuisine): 
