@@ -1,7 +1,7 @@
 """
 git status
 git add .
-git commit -m "changed apikey declarations"
+git commit -m "changed apikey declarations2"
 git push
 """
 
@@ -15,6 +15,8 @@ import os
 
 # Configurar la clave API de OpenAI utilizando st.secrets
 st.write("API Key:", st.secrets["my_secrets"]["api_key"])
+# Accede a los secretos utilizando la estructura correcta
+
 
 #openai.api_key = openai_api_key
 
