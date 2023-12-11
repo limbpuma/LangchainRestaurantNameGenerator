@@ -3,6 +3,7 @@ import streamlit as st
 import base64
 import json
 
+
 # Función para cargar las traducciones
 def load_translations(language_code):
     with open(f"texts_{language_code}.json", "r", encoding="utf-8") as file:

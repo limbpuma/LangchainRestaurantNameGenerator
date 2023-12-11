@@ -2,13 +2,16 @@ from langchain.llms import OpenAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 from langchain.chains import SequentialChain
-from dotenv import find_dotenv, load_dotenv
+
 import openai
 import os
 
+import streamlit as st
 
-load_dotenv(find_dotenv())
-openai.api_key = os.getenv("OPENAI_API_KEY")
+# Configurar la clave API de OpenAI utilizando st.secrets
+openai_api_key = st.secrets["openai_api_key"]
+openai.api_key = openai_api_key
+
 
 llm = OpenAI(temperature=0.6)
 
