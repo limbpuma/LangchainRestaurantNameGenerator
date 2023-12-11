@@ -1,7 +1,7 @@
 """
 git status
 git add .
-git commit -m "changed apikey declarations4"
+git commit -m "changed apikey declarations5"
 git push
 """
 
@@ -17,8 +17,6 @@ import os
 openai_api_key = st.secrets["my_secrets"]["api_key"]
 # Accede a los secretos utilizando la estructura correcta
 
-
-#openai.api_key = openai_api_key
 
 
 # Inicializar 'llm'
